@@ -23,6 +23,9 @@ internal class TblMerger : IFileMerger
             case Game.P3P:
                 _tblMerger = new P3PTblMerger(utils, logger, mergedFileCache, criFsApi, pakEmulator);
                 break;
+            case Game.MRF:
+                _tblMerger = new MRFTblMerger(utils, logger, mergedFileCache, criFsApi);
+                break;
             default:
                 logger.Warning($"{game} does not support tbl merging");
                 break;
